@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(135, 129, 132, 0.63) ;
+            font: normal 18pt Arial;
+        }
+        input#pais{
+            font: normal 20pt Arial;
+            background: rgb(224, 224, 224);
+            width: 200px;
+            height: 30px;
+        }
+        input#botao{
+            font: normal 20pt Arial;
+            background: rgb(224, 224, 224);
+            width: 100px;
+            height: 37px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>QUAL O SEU PAIS?</h1>
+    meu pais é <input type="text" name="pais" id="pais">
+    <input type="button" value="enviar" id="botao" onclick="enviar()">
+    <div id="lugar">
+
+    </div>
+<script>
+    function enviar() {
+        var pais = document.getElementById('pais')
+        var lugar = document.getElementById('lugar')
+        var local = String(pais.value)
+        var paisb = "Brasil"
+        lugar.innerHTML = `<p>seu pais é ${local}</p>`
+
+        if (local == paisb){
+            lugar.innerHTML += `<p>voce é brasileiro</p>`
+        }else{
+            lugar.innerHTML += `<p>voce não é do Brasil</p>`
+        }
+    }
+</script>
+</body>
+</html>
